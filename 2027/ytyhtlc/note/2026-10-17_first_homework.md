@@ -1,5 +1,11 @@
 ## DX工作流之git
 
+**先来个命令大赏**
+
+![image-20261018002120316](/home/lichen/.config/Typora/typora-user-images/image-20261018002120316.png)
+
+![image-20261018002139364](/home/lichen/.config/Typora/typora-user-images/image-20261018002139364.png)
+
 ### 第0步：Fork目标仓库到自己的帐号
 
 ### 第1步：克隆拉取
@@ -18,6 +24,34 @@ GitHub 上一个人能看的页面是 `https://github.com/lichen/missing-semeste
 克隆之后，你电脑上的目录名是 `missing-semester`。Git 会把网址最后一截拿来当目录名，并去掉末尾的 `.git`。里面那个隐藏的 `.git` 目录是另一回事：它是克隆时在本地新建的，用来存放提交记录、分支和远程地址，不是从网址上把一个叫 `.git` 的文件下载下来。
 
 在 GitHub 上，不写这四个字符也可以克隆，`https://github.com/lichen/missing-semester` 同样能用。写上 `.git` 只是把“要仓库数据”说完整。
+
+### 第2步：创建分支
+
+用**git switch -c 分支名**
+
+然后得到从master完美复制过来的副本
+
+### 第3步：添加并提交
+
+用 **`git add` 目录名** 
+
+之前：改动只在工作区。
+
+之后：这几个路径进入暂存区。`git status` 里它们变成 “Changes to be committed”。仍没有新提交，远程也没变。
+
+**然后提交奥**
+
+用**`git commit -m "Add lecture 1 notes and homework script."`**
+
+### 第4步：远程推到仓库
+
+用 **`git push -u origin shuange1`**
+
+之前： GitHub 仓库没有 这条分支。
+
+之后：`origin` 上出现这条分支，包含刚才的提交。`-u` 让本地分支记住对应的远程分支，以后在这条分支上直接 `git push` 就会送到这里。
+
+### 第5步：提交PR
 
 ### git 其他机制
 
